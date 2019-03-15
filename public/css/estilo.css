@@ -1,0 +1,228 @@
+/*modal*/
+.modal-footer{
+    padding: 10px; 
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+.modal-header .close{
+    margin-top: -10px; 
+}
+.modal-header{
+    color: white;
+    background: #3a87ad;
+    padding: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(3rem + 2px);
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 2px -14px 0px;
+    line-height: normal;
+}
+
+/*------------------------------------------------*/
+/*.btn {    
+    padding: 0px 12px;    
+}*/
+.dataTables_filter {
+    float: left;
+    width: 30%; 
+}
+
+.ClassMsgBlock{
+    padding: 4px;
+    font-weight: bold;
+    color: black;
+    height: 17px;
+}
+.home_top_almacen{
+    border: 0px;
+    /*color: black;*/
+    height: 18px;
+    font-weight: bold;
+    background: #004D62;
+    cursor: default;
+}
+#project-selector, .project-selector {    
+    color: white;    
+}
+#project-selector:hover, .project-selector:hover {
+    color: white;
+}
+
+.cr-active
+{
+    background-color:#D0E8ED !important;
+}
+.cr-active a
+{
+    color:#004153 !important;
+}
+
+.ui-jqgrid {
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+.ui-dialog .ui-widget-header{
+    background: #2E7B89;
+    height: 35px;
+}
+.ui-dialog .ui-dialog-title {
+    color: #ffffff;
+    margin: -5px 3px;
+    padding: 0;
+}
+.ui-dialog-titlebar-close::before {
+    content: "";          
+    line-height: 2;            
+    opacity: 1;
+}
+
+.ui-widget-content.ui-dialog{
+    border: 1px solid #63A7B2;   
+}
+.ui-dialog .ui-dialog-titlebar{
+    border-radius: 0px;
+    font-size: 10px;
+}
+.ui-dialog {            
+    border-radius: 0px;            
+}
+
+.ui-dialog .ui-dialog-content {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;            
+    overflow: visible;
+    padding: 0.5em 1em;            
+}
+.ui-dialog .ui-dialog-buttonpane {
+    border-top: 1px solid #63A7B2;
+    margin-top: 13px;
+    padding: 12px;
+    text-align: right;
+}
+
+.panel-success>.panel-heading {
+    color: white;
+    background-color: #63A7B2;
+    border-color: #80B23E;
+    text-align: center;
+}
+
+.smart-form fieldset {    
+    padding: 5px 8px 0px;   
+}
+.smart-form section {
+    margin-bottom: 5px;    
+}
+.smart-form .label {  
+    margin-bottom: -1px;   
+}
+
+.page-footer {
+    background:#43755d;    
+}
+#header {
+    /*background-image: linear-gradient(to bottom,  #41BE82,#B1DD77);*/
+    background: #004D62;
+    /*background-repeat: repeat-x;*/    
+}
+.fixed-header #header {
+    border-bottom: 1px solid #004153;    
+}
+
+#logo {   
+    margin-top: 10px;   
+}
+#logo img {    
+    padding-left: 5px;
+    width: 155px;
+}
+
+.ui-jqgrid .ui-jqgrid-titlebar {
+    
+    background: #05879D;
+    /*background-image: linear-gradient(to bottom,#05879D,#D0E8ED);*/ 
+    background-repeat: repeat-x;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 0 none;
+    font-size: 12px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.ui-jqgrid .ui-jqgrid-title {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.ui-jqgrid {
+    border: 1px solid #05879D !important;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.ui-corner-right, .ui-corner-top, .ui-corner-tr {
+    border-top-right-radius: 0px;
+}
+.ui-corner-left, .ui-corner-tl, .ui-corner-top {
+    border-top-left-radius: 0px;
+}
+
+.ui-corner-bottom, .ui-corner-br, .ui-corner-right {
+    border-bottom-right-radius: 0px;
+}
+.ui-corner-bl, .ui-corner-bottom, .ui-corner-left {
+    border-bottom-left-radius: 0px;
+}
+
+.ui-jqgrid .ui-jqgrid-pager {    
+    background-color: #FFFFFF !important;
+    padding: 0px !important;
+}
+.ui-jqgrid .ui-jqgrid-pager {
+    font-size: 15px;    
+}
+
+.ui-widget-content {
+    background: white none repeat scroll 0 0;
+    border: 1px solid #D9EDF7;
+    color: #404040;
+}
+
+.ui-jqgrid tr.ui-row-ltr td {
+    border: 1px solid #BCBCBC !important;
+    padding: 4px 4px;
+}
+
+.ui-jqgrid tr.jqgrow {    
+    height: 30px;
+}
+
+/*.ui-jqgrid tr.ui-row-ltr td {   
+    font-size: 13.5px !important;
+    padding-bottom: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    padding-top: 0;
+}*/
+
+.ui-jqgrid .ui-state-highlight td {
+    background-color: #D9EDF7 !important;
+    border-color: #bce8f1 !important;
+    color: #004D62 !important;
+    font-weight: bold !important;
+}
+
+
+html input[disabled] {
+    cursor: default;    
+}
+input[type="text"]:disabled {
+    background: #DDD;
+}
+textarea:disabled{
+    background: #DDD !important;
+}
