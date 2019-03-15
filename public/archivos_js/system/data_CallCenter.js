@@ -78,3 +78,7 @@ function btn_guardar_llamada(){
 function llamada_delete(id_llamada){
     alert(id_llamada);
 }
+
+function buscar_llamada(){
+    fn_actualizar_grilla('tabla_call_center','grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val());
+}

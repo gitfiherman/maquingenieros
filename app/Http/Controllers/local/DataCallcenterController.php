@@ -26,8 +26,14 @@ class DataCallcenterController extends Controller {
 //        $fecha=$request['fecha'];
 //        $fecha= str_replace('/','-',$request['fecha']);
 //        $fecha = date("Y-m-d",strtotime($fecha));
+//        $totalg = DB::table('system.vw_data_llamadas')->where('movil', 'like', "%{$buscar}%")->count();
+                
+//        $totalg = DB::select("select count(id) as total from system.vw_data_llamadas")->where('movil', 'like', "%{$buscar}%");
         
-        $totalg = DB::select("select count(id) as total from system.vw_data_llamadas");
+        
+        
+        
+        
         $page = $_GET['page'];
         $limit = $_GET['rows'];
         $sidx = $_GET['sidx'];
@@ -37,7 +43,16 @@ class DataCallcenterController extends Controller {
         if (!$sidx) {
             $sidx = 1;
         }
-        $count = $totalg[0]->total;
+        
+        if (empty($_GET['buscar'])) {
+            $count = DB::table('system.vw_data_llamadas')->count();
+        }else{
+            $buscar = $_GET['buscar'];
+            $count = DB::table('system.vw_data_llamadas')
+                    ->where('movil', 'like', "%{$buscar}%")->orWhere('nom_com', 'like', "%{$buscar}%")->orWhere('ape_com', 'like', "%{$buscar}%")
+                    ->count();
+        }
+        
         if ($count > 0) {
             $total_pages = ceil($count / $limit);
         }
@@ -48,8 +63,15 @@ class DataCallcenterController extends Controller {
         if ($start < 0) {
             $start = 0;
         }
-
-        $sql = DB::table('system.vw_data_llamadas')->orderBy($sidx, $sord)->limit($limit)->offset($start)->get();
+        
+        if (empty($_GET['buscar'])) {            
+            $sql = DB::table('system.vw_data_llamadas')->orderBy($sidx, $sord)->limit($limit)->offset($start)->get();
+        }else{
+            $buscar = strtoupper($_GET['buscar']);
+            $sql = DB::table('system.vw_data_llamadas')
+                ->where('movil', 'like', "%{$buscar}%")->orWhere('nom_com', 'like', "%{$buscar}%")->orWhere('ape_com', 'like', "%{$buscar}%")
+                ->orderBy($sidx, $sord)->limit($limit)->offset($start)->get();
+        }
 
         $Lista = new \stdClass();
         $Lista->page = $page;
@@ -103,6 +125,58 @@ class DataCallcenterController extends Controller {
         }else{
             return false;
         }
+    }
+    
+    
+//    CONTACT_EMAIL------------------------------------------------------
+    function contact_email(){
+        return view('layouts.vw_emails');
+    }
+    function get_contact_emails(){
+        $totalg = DB::select("select count(id) as total from vw_contact_email");
+        $page = $_GET['page'];
+        $limit = $_GET['rows'];
+        $sidx = $_GET['sidx'];
+        $sord = $_GET['sord'];
+
+        $total_pages = 0;
+        if (!$sidx) {
+            $sidx = 1;
+        }
+        $count = $totalg[0]->total;
+        if ($count > 0) {
+            $total_pages = ceil($count / $limit);
+        }
+        if ($page > $total_pages) {
+            $page = $total_pages;
+        }
+        $start = ($limit * $page) - $limit; // do not put $limit*($page - 1)  
+        if ($start < 0) {
+            $start = 0;
+        }
+
+        $sql = DB::table('vw_contact_email')->orderBy($sidx, $sord)->limit($limit)->offset($start)->get();
+
+        $Lista = new \stdClass();
+        $Lista->page = $page;
+        $Lista->total = $total_pages;
+        $Lista->records = $count;        
+
+        foreach ($sql as $Index => $Datos) {
+            $Lista->rows[$Index]['id'] = $Datos->id;
+            $Lista->rows[$Index]['cell'] = array(
+                trim($Datos->id),                
+                trim($Datos->nombres),
+                trim($Datos->apellidos),
+                trim($Datos->message),
+                trim($Datos->email),               
+                trim($Datos->region),
+                trim($Datos->area_formacion),
+                trim($Datos->area_trabajo),
+                trim($Datos->industria)
+            );
+        }
+        return response()->json($Lista);
     }
 
     public function getDataCallCenter_old(Request $request) {

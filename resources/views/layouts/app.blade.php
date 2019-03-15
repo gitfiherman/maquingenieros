@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>SISTEMA</title>
         <!--<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">-->
         <!--<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">-->
-        
+
         <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link href="{{ asset('css/smartadmin-production-plugins.min.css') }}" rel="stylesheet" type="text/css" media="screen">
         <link href="{{ asset('css/smartadmin-production.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/smartadmin-skins.min.css') }}" rel="stylesheet">
-        
+
         <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
 
@@ -63,7 +63,7 @@
                 <div id="logout" class="btn-header transparent pull-right">
                     <span>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Salir" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> 
-                        
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
@@ -91,7 +91,7 @@
         </header>
         <!-- Dialogo de alertas -->
         <div id="alertdialog" style="display: none;" ></div>
-        
+
         @if (!Auth::guest())
         <aside id="left-panel" style="background: #05879D !important">        
             <div class="login-info" style="background: #05879D;border-bottom: 3px solid #f2f2f2;">
@@ -115,7 +115,10 @@
                             </li>                            
                             <li id="menu_logistica_database">
                                 <a href="{{route('data_callcenter')}}" title="datos de todas las llamadas realizadas"><i class="fa fa-database"></i>Base de datos</a>
-                            </li>                            
+                            </li>
+                            <li id="menu_logistica_contact_email">
+                                <a href="{{route('contact_email')}}" title="datos de todas las llamadas realizadas"><i class="fa fa-paper-plane"></i>Emails</a>
+                            </li>                             
                         </ul>                        
                     </li>
                     <li class="">
@@ -159,71 +162,77 @@
                             <div class="panel-heading bg-color-success">.:: Selecciona Tu Foto ::.</div>
                             <div class="panel-body">
                                 <form id="form_cambiar_foto" name="form_cambiar_foto">
-                                <div class="text-center col col-12" style="margin-top: 10px;">                            
-                                    <img id="vw_usuario_cambiar_foto_img" src="{{asset('img/avatars/male.png')}}" name="vw_usuario_cambiar_foto_img" size="2048" style="width: 233px;height: 230px;border: 1px solid #fff; outline: 1px solid #bfbfbf;margin-bottom: 14px;">
-                                    <label class="label">Seleccionar Foto:</label>
-                                    <label class="input"> 
-                                        <input type="file" id="vw_usuario_cambiar_cargar_foto" name="vw_usuario_cambiar_cargar_foto" accept="image/png, image/jpeg, image/jpg">
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>                 
-                </div>        
-            </div>
-        </div>
-        <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-        <script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>
-       
-        <script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>
-        
+                                    <div class="text-center col col-12" style="margin-top: 10px;">                            
+                                        <img id="vw_usuario_cambiar_foto_img" src="{{asset('img/avatars/male.png')}}" name="vw_usuario_cambiar_foto_img" size="2048" style="width: 233px;height: 230px;border: 1px solid #fff; outline: 1px solid #bfbfbf;margin-bottom: 14px;">
+                                        <label class="label">Seleccionar Foto:</label>
+                                        <label class="input"> 
+                                            <input type="file" id="vw_usuario_cambiar_cargar_foto" name="vw_usuario_cambiar_cargar_foto" accept="image/png, image/jpeg, image/jpg">
+                                            </div>
+                                            </form>
+                                            </div>
+                                            </div>
+                                            </div>                 
+                                            </div>        
+                                            </div>
+                                            </div>
+                                            <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+                                            <script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>
 
-        <script src="{{ asset('archivos_js/global_function.js') }}"></script>
+                                            <script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>
 
-        <script src="{{ asset('js/app.config.js') }}"></script>
-        <script src="{{ asset('js/app.min.js') }}"></script>
-        <script src="{{ asset('js/block_ui.js') }}"></script>        
-        <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
-        <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
-        <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>
+                                            <script src="{{ asset('archivos_js/global_function.js') }}"></script>
 
-        <script src="{{ asset('js/plugin/masked-input/jquery.maskedinput.min.js') }}"></script>
+                                            <script src="{{ asset('js/app.config.js') }}"></script>
+                                            <script src="{{ asset('js/app.min.js') }}"></script>
+                                            <script src="{{ asset('js/block_ui.js') }}"></script>        
+                                            <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
-        <script src="{{ asset('js/notification/SmartNotification.min.js')}}"></script>
-        
-        <script src="{{ asset('js/jquery-confirm.js')}}"></script>        
-        <script src="{{ asset('archivos_js/configuracion.js') }}"></script>
-        
-        <!--tablas-->        
+                                            <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
+                                            <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>
 
-        <script src="{{ asset('datatables/multiple-select.js') }}"></script>
-        <script src="{{ asset('datatables/DataTables/js/jquery.dataTables.min.js') }}"></script>
-        <!--<script src="{{ asset('datatables/DataTables/js/dataTables.bootstrap.min.js') }}"></script>-->
-        
-        
-        @if (!Auth::guest())
+                                            <script src="{{ asset('js/plugin/masked-input/jquery.maskedinput.min.js') }}"></script>
 
-        <script>            
-            $(document).ready(function () {                
-                pageSetUp();
-                $.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
-                    _title: function (title) {
-                        if (!this.options.title) {
-                            title.html("&#160;");
-                        } else {
-                            title.html(this.options.title);
-                        }
-                    }
-                }));                
-                $("#alertdialog").dialog({
-                        autoOpen: false,modal:true,title: "<div class='widget-header'><h4>.: Mensaje del Sistema :.</h4></div>", buttons: [ { html: '<span class="btn-label"><i class="glyphicon glyphicon-check"></i></span>&nbsp; Aceptar',
-                        "class": "btn btn-labeled bg-color-blue txt-color-white", click: function() { $( this ).dialog( "close" );  if(focoglobal!=""){ foco(focoglobal);} focoglobal="";} } ]
-                });
-            });                       
-        </script>
-        @endif
+                                            <script src="{{ asset('js/notification/SmartNotification.min.js')}}"></script>
 
-        @yield('page-js-script')
-    </body>
-</html>
+                                            <script src="{{ asset('js/jquery-confirm.js')}}"></script>        
+                                            <script src="{{ asset('archivos_js/configuracion.js') }}"></script>
+
+                                            <!--tablas-->        
+
+                                            <script src="{{ asset('datatables/multiple-select.js') }}"></script>
+                                            <script src="{{ asset('datatables/DataTables/js/jquery.dataTables.min.js') }}"></script>
+                                            <!--<script src="{{ asset('datatables/DataTables/js/dataTables.bootstrap.min.js') }}"></script>-->
+
+
+                                            @if (!Auth::guest())
+
+                                            <script>
+                            $(document).ready(function () {
+                                pageSetUp();
+                                $.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+                                    _title: function (title) {
+                                        if (!this.options.title) {
+                                            title.html("&#160;");
+                                        } else {
+                                            title.html(this.options.title);
+                                        }
+                                    }
+                                }));
+                                $("#alertdialog").dialog({
+                                    autoOpen: false, modal: true, title: "<div class='widget-header'><h4>.: Mensaje del Sistema :.</h4></div>", buttons: [{html: '<span class="btn-label"><i class="glyphicon glyphicon-check"></i></span>&nbsp; Aceptar',
+                                            "class": "btn btn-labeled bg-color-blue txt-color-white", click: function () {
+                                                $(this).dialog("close");
+                                                if (focoglobal != "") {
+                                                    foco(focoglobal);
+                                                }
+                                                focoglobal = "";
+                                            }}]
+                                });
+                            });
+                                            </script>
+                                            @endif
+
+                                            @yield('page-js-script')
+                                            </body>
+                                            </html>

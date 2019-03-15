@@ -30,5 +30,8 @@ Route::group(['namespace' => 'local'], function()
    Route::post('get_llamada_id','DataCallcenterController@get_llamada_id');
    Route::get('post_llamada','DataCallcenterController@save_llamada')->name('save_edit_datallamadas');
    
+   Route::get('contactos_enviados_email','DataCallcenterController@contact_email')->name('contact_email');
+   Route::get('grid_contact_email','DataCallcenterController@get_contact_emails');
+   
 });
 

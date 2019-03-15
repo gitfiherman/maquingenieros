@@ -10,9 +10,9 @@
                     <div class="row">
                         <article class="col-sm-12 col-md-12 col-lg-8 sortable-grid ui-sortable" style="margin-bottom: 5px;">
                             <div class="input-group col-lg-12">
-                                <input class="form-control" type="text" placeholder="Buscar...">
+                                <input class="form-control" type="text" id="txt_buscar_llamada" placeholder="Buscar...">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default btn-primary" type="button">
+                                    <button class="btn btn-default btn-primary" onclick="buscar_llamada();" id="btn_buscar_llamada" type="button">
                                         <i class="fa fa-search"></i> Buscar...
                                     </button>
                                 </div>
@@ -23,9 +23,6 @@
                                 <div class="text-right">
                                     <section class="">
                                         <button onclick="Open_dlg_llamadas()" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-plus"></i> Nuevo</button>
-                                        <!--<a class="btn btn-primary" data-target="#dlg_llamadas" data-toggle="modal" href="javascript:void(0);"><i class="fa fa-plus"></i> Nuevo</a>-->
-<!--                                        <a class="btn btn-success" data-target="#dlg_llamadas" data-toggle="modal" href="javascript:void(0);"><i class="fa fa-edit"></i> Editar</a>
-                                        <a class="btn btn-danger" href="javascript:void(0);"><i class="fa fa-trash"></i> Eliminar</a>-->
                                     </section> 
                                 </div>
                             </div>
@@ -144,7 +141,7 @@
         $("#menu_logistica_database").addClass('cr-active');
 
         jQuery("#tabla_call_center").jqGrid({
-            url: 'grid_data_llamadas',
+            url: 'grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val(),
             datatype: 'json', mtype: 'GET',
             height: 'auto', autowidth: true,
             colNames: ['ID', 'Nombres', 'Apellidos', 'Telefono', 'Observacion', 'Curso', 'Fecha', 'Estado', 'Edit', 'Elim'],
@@ -169,19 +166,19 @@
                     var firstid = jQuery('#tabla_call_center').jqGrid('getDataIDs')[0];
                     $("#tabla_call_center").setSelection(firstid);
                 }
-            },
-            col: {
-                caption: "Show/Hide Columns",
-                bSubmit: "Submit",
-                bCancel: "Cancel"
             }
         });
-        jQuery("#btnShowHide").click(function () {
-            jQuery("#tabla_call_center").setColumns(options);
-            return false;
-        });
+//        jQuery("#btnShowHide").click(function () {
+//            jQuery("#tabla_call_center").setColumns(options);
+//            return false;
+//        });
         $(window).on('resize.jqGrid', function () {
             $("#tabla_call_center").jqGrid('setGridWidth', $("#content").width());
+        });
+        $("#txt_buscar_llamada").keypress(function (e) {
+            if (e.which == 13 && !e.shiftKey) {
+                fn_actualizar_grilla('tabla_call_center','grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val());
+            }
         });
     });
     $('#dlg_llamadas').on('hidden.bs.modal', function () {
