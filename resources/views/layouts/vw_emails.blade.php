@@ -6,9 +6,9 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: -12px">
             <section id="widget-grid" class="">
                 <div class="well">
-                    <h1 class="txt-color-blueDark"><b>.:Base de Datos:.</b></h1>
+                    <h1 class="txt-color-blueDark"><b>.:Contactos E-mail:.</b></h1>
                     <div class="row">
-                        <article class="col-sm-12 col-md-12 col-lg-8 sortable-grid ui-sortable" style="margin-bottom: 5px;">
+<!--                        <article class="col-sm-12 col-md-12 col-lg-8 sortable-grid ui-sortable" style="margin-bottom: 5px;">
                             <div class="input-group col-lg-12">
                                 <input class="form-control" type="text" placeholder="Buscar...">
                                 <div class="input-group-btn">
@@ -17,19 +17,17 @@
                                     </button>
                                 </div>
                             </div>   
-                        </article>
-                        <article class="col-sm-12 col-md-12 col-lg-4 sortable-grid ui-sortable">
+                        </article>-->
+<!--                        <article class="col-sm-12 col-md-12 col-lg-4 sortable-grid ui-sortable">
                             <div class="input-group col-lg-12">
                                 <div class="text-right">
                                     <section class="">
-                                        <button onclick="Open_dlg_contact_email()" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-plus"></i> Nuevo</button>
-                                        <!--<a class="btn btn-primary" data-target="#dlg_llamadas" data-toggle="modal" href="javascript:void(0);"><i class="fa fa-plus"></i> Nuevo</a>-->
-<!--                                        <a class="btn btn-success" data-target="#dlg_llamadas" data-toggle="modal" href="javascript:void(0);"><i class="fa fa-edit"></i> Editar</a>
-                                        <a class="btn btn-danger" href="javascript:void(0);"><i class="fa fa-trash"></i> Eliminar</a>-->
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-plus"></i> Nuevo</button>
+                                        
                                     </section> 
                                 </div>
                             </div>
-                        </article>
+                        </article>-->
                     </div>
                 </div>
             </section>           

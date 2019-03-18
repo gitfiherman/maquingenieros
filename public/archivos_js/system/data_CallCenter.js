@@ -1,5 +1,5 @@
 
-function Open_dlg_llamadas(){
+function Open_dlg_llamadas(){    
     $('#dlg_llamadas').modal('show');
     $('#txt_id_llamada').val(0);
 }
@@ -76,7 +76,36 @@ function btn_guardar_llamada(){
 }
 
 function llamada_delete(id_llamada){
-    alert(id_llamada);
+    id_llamada = id_ent = $('#tabla_call_center').jqGrid('getGridParam', 'selrow');
+    $.confirm({
+        title: 'Confirmar',
+        type: 'red',
+        content: 'Simple confirm!',
+        buttons: {
+            Aceptar: function () {
+                $.ajax({
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    type: 'GET',
+                    url: 'delete_llamada?id='+ id_llamada,                    
+                    success: function(data){
+                        if(data.msg=='si'){
+                            $('#dlg_llamadas').modal('hide');
+                            fn_actualizar_grilla('tabla_call_center','grid_data_llamadas');
+                            MensajeExito('Llamadas','El registro ha sido actualizado...');                
+                        }            
+                    },
+                    error: function(e){
+                        console.log(e);
+                        MensajeAlerta('Sistema', 'Ocurrio un error en el Sistema...');
+                    }
+                });
+            },
+            Cancelar: function () {
+                window.close();
+            }            
+        }
+    });
+    
 }
 
 function buscar_llamada(){

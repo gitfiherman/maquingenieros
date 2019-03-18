@@ -124,11 +124,11 @@ input[type=checkbox], input[type=radio] {
 }
 #header {
     /*background-image: linear-gradient(to bottom,  #41BE82,#B1DD77);*/
-    background: #004D62;
+    background: #262422;
     /*background-repeat: repeat-x;*/    
 }
 .fixed-header #header {
-    border-bottom: 1px solid #004153;    
+    border-bottom: 1px solid #DDD;    
 }
 
 #logo {   

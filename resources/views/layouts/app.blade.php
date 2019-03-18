@@ -93,8 +93,8 @@
         <div id="alertdialog" style="display: none;" ></div>
 
         @if (!Auth::guest())
-        <aside id="left-panel" style="background: #05879D !important">        
-            <div class="login-info" style="background: #05879D;border-bottom: 3px solid #f2f2f2;">
+        <aside id="left-panel">        
+            <div class="login-info">
                 <span>
                     <a>
                         <img src="img/avatars/male.png" alt="me" style="width: 22px; height: 25px;" class="offset"/> 
