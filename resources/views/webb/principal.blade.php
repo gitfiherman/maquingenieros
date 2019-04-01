@@ -15,7 +15,7 @@
                     <h1 class="animated rollIn v_text_fondo_home">CARGADOR FRONTAL CAT</h1>
                     <p class="animated rollIn"><b>100% PRÁCTICO CON RESPALDO DEL MTC</b></p>
                     <a href="{{route('contacto')}}" id="tohash" class="animated rollIn btn btn-primary">Contacto</a>
-                    <a href="http://www.youtube.com/watch?v=XweuQqY1dDs&t=12s" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
+                    <a href="https://www.youtube.com/watch?v=XweuQqY1dDs&t=12s" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
                 </div>					
             </div>
             <div class="item" style="background-image: url(plantilla/images/home/2.jpg)">
@@ -23,7 +23,7 @@
                     <h1 class="animated rollIn v_text_fondo_home">VOLQUETE VOLVO FMX 440/480</h1>
                     <p class="animated rollIn"><b>100% PRÁCTICO CON RESPALDO DEL MTC</b></p>
                     <a href="{{route('contacto')}}" id="tohash1" class="animated rollIn btn btn-primary">Contacto</a>
-                    <a href="http://www.youtube.com/watch?v=hH8m0rgN9Z4" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
+                    <a href="https://www.youtube.com/watch?v=hH8m0rgN9Z4" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
                 </div>
             </div>
             <div class="item" style="background-image: url(plantilla/images/home/3.webp)">
@@ -31,7 +31,7 @@
                     <h1 class="animated rollIn v_text_fondo_home">CAJA EATON FULLER</h1>
                     <p class="animated rollIn"><b>100% PRÁCTICO CON RESPALDO DEL MTC</b></p>
                     <a href="{{route('contacto')}}" id="tohash2" class="animated rollIn btn btn-primary">Contacto</a>
-                    <a href="http://www.youtube.com/watch?v=LCtMpOtothI&t=9s" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
+                    <a href="https://www.youtube.com/watch?v=LCtMpOtothI&t=9s" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
                 </div>
             </div>
             <div class="item" style="background-image: url(plantilla/images/home/4.webp)">
@@ -39,7 +39,7 @@
                     <h1 class="animated rollIn v_text_fondo_home">MANEJO DEFENSIVO 4x4</h1>
                     <p class="animated rollIn"><b>100% PRÁCTICO CON RESPALDO DEL MTC</b></p>
                     <a href="{{route('contacto')}}" id="tohash3" class="animated rollIn btn btn-primary">Contacto</a>
-                    <a href="http://www.youtube.com/watch?v=7NISDqIpOuU&t=1s" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
+                    <a href="https://www.youtube.com/watch?v=7NISDqIpOuU&t=1s" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Ver Video</a>
                 </div>
             </div>
         </div>	

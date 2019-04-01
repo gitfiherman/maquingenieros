@@ -9,7 +9,7 @@ class Llamadas extends Model
     public $timestamps = false;
     protected $table = 'system.llamadas';
     protected $fillable = [
-        'ape_com','nom_com','movil','fijo','obs','id_cur','otros_cur','fch_llamada','wasap','id_est_llamada','id_asesor','prox_fch_llamada'
+        'ape_com','nom_com','movil','fijo','obs','id_cur','otros_cur','fch_llamada','wasap','id_est_llamada','id_asesor','prox_fch_llamada','est_reg'
     ];
     protected $primaryKey='id';
 }

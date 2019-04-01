@@ -133,7 +133,7 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label class="">Comentarios</label>
-                                <textarea name="message" id="message" required="required" value="{{old('message')}}" class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" rows="3" placeholder="Mensaje" maxlength="150" style="margin-top:2px"></textarea>
+                                <textarea name="message" id="message" required="required" class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" rows="3" placeholder="Mensaje" maxlength="150" style="margin-top:2px">{{old('message')}}</textarea>
                                 @if ($errors->has('message'))
                                 <span class="invalid-feedback v_error_contact" role="alert" >
                                     <strong>{{ $errors->first('message') }}</strong>

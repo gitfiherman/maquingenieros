@@ -1,48 +1,5 @@
 
-$(document).ready(function () {
-    foto_global = '';
-    $(function () {
-        $('#vw_usuario_cargar_foto,#vw_usuario_cambiar_cargar_foto').change(function (e) {
-            if (validarImagen(e)) {
-                addImage(e);
-            } else {
-                $("#vw_usuario_foto_img,#vw_usuario_cambiar_foto_img").attr("src", "img/avatars/male.png");
-                $("#vw_usuario_cargar_txt_foto,#vw_usuario_cambiar_cargar_foto").val('');
-            }
-        });
 
-        function addImage(e) {
-            var file = e.target.files[0],
-                    imageType = /image.*/;
-
-            if (!file.type.match(imageType)) {
-                $("#vw_usuario_cargar_foto,#vw_usuario_cambiar_cargar_foto").val("");
-                return mostraralertas('*Solo puede Seleccionar Imagenes JPG,JPEG, PNG');
-            }
-
-            var reader = new FileReader();
-            reader.onload = fileOnload;
-            reader.readAsDataURL(file);
-        }
-        function fileOnload(e) {
-            var result = e.target.result;
-            foto_global = result;
-            $('#vw_usuario_foto_img,#vw_usuario_cambiar_foto_img').attr("src", foto_global);
-        }
-
-    });
-
-    function validarImagen(e) {
-        var fileSize = e.target.files[0].size;
-        var siezekiloByte = parseInt(fileSize / 2000);
-        if (siezekiloByte > $('#vw_usuario_foto_img,#vw_usuario_cambiar_foto_img').attr('size')) {
-            mostraralertas("* La Imagen es muy grande, Tamaño Maximo 2MB");
-            return false;
-        } else {
-            return true;
-        }
-    }
-});
 
 function open_dialog_new_edit_Usuario() {
 
@@ -101,7 +58,7 @@ function dlg_Editar_Usuario() {
             $("#vw_usuario_txt_fch_nac_2").val(data.fch_nac);
             $("#vw_usuario_txt_usuario_2").val(data.usuario);
             $("#vw_usuario_txt_nivel_2").val(data.nivel);
-//            $("#vw_usuario_foto_img").attr('src', 'data:image/png;base64,' + data.foto);
+//            $("#img-upload").attr('src', 'data:image/png;base64,' + data.foto);
 
         }, error: function (data) {
             mostraralertas('* Error base de datos... <br> * Contactese con el administrador..');
@@ -200,7 +157,7 @@ function cambiar_foto_usuario() {
             }],
         close: function (event, ui) {
             $("#vw_usuario_cambiar_foto_img").attr("src", "img/avatars/male.png");
-            $("#vw_usuario_cambiar_cargar_foto").val('');
+            $("#user_cargar_foto").val('');
             foto_global = '';
         }
     }).dialog('open');
@@ -208,9 +165,9 @@ function cambiar_foto_usuario() {
 
 function update_foto() {
 
-    var filesSelected = $("#vw_usuario_cambiar_cargar_foto").val();
+    var filesSelected = $("#user_cargar_foto").val();
     if (filesSelected == '') {
-        mostraralertasconfoco('* Seleccione una Foto', 'vw_usuario_cambiar_cargar_foto');
+        mostraralertasconfoco('* Seleccione una Foto', 'user_cargar_foto');
         return false;
     }
     var form = new FormData($("#form_cambiar_foto")[0]);
@@ -287,7 +244,7 @@ function validar_dni(dni) {
 
 function limpiar_form_usuario() {
     $("#vw_usuario_txt_ape_nom").val('');
-    $("#vw_usuario_foto_img").attr("src", "img/avatars/male.png");
+    $("#img-upload").attr("src", "img/avatars/male.png");
     $("#vw_usuario_cargar_foto").val("");
     $("#vw_usuario_txt_dni").val('');
     $("#vw_usuario_txt_fch_nac").val('');

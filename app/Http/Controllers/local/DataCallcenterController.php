@@ -48,7 +48,7 @@ class DataCallcenterController extends Controller {
         } else {
             $buscar = $_GET['buscar'];
             $count = DB::table('system.vw_data_llamadas')
-                    ->where('movil', 'like', "%{$buscar}%")->orWhere('nom_com', 'like', "%{$buscar}%")->orWhere('ape_com', 'like', "%{$buscar}%")
+                    ->Where('movil', 'like', "%{$buscar}%")->orWhere('nom_com', 'like', "%{$buscar}%")->orWhere('ape_com', 'like', "%{$buscar}%")
                     ->count();
         }
 
@@ -68,7 +68,7 @@ class DataCallcenterController extends Controller {
         } else {
             $buscar = strtoupper($_GET['buscar']);
             $sql = DB::table('system.vw_data_llamadas')
-                            ->where('movil', 'like', "%{$buscar}%")->orWhere('nom_com', 'like', "%{$buscar}%")->orWhere('ape_com', 'like', "%{$buscar}%")
+                            ->Where('movil', 'like', "%{$buscar}%")->orWhere('nom_com', 'like', "%{$buscar}%")->orWhere('ape_com', 'like', "%{$buscar}%")
                             ->orderBy($sidx, $sord)->limit($limit)->offset($start)->get();
         }
 
@@ -115,16 +115,21 @@ class DataCallcenterController extends Controller {
 
     function delete_llamada(Request $request) {
 
-        $sql = Llamadas::find($request['id']);
+        $sql = Llamadas::find($request['id'])->update(['est_reg' => 0]);
         if ($sql) {
-            $rpta = Llamadas::where('id',$request['id'])->delete();
-            
-            if($rpta){
-                return response()->json(['msg' => 'si']);
-            }else{
-                return response()->json(['msg' => 'no']);
-            }
+            return response()->json(['msg' => 'si']);
+        } else {
+            return false;
         }
+//        if ($sql) {
+//            $rpta = Llamadas::where('id',$request['id'])->delete();
+//            
+//            if($rpta){
+//                return response()->json(['msg' => 'si']);
+//            }else{
+//                return response()->json(['msg' => 'no']);
+//            }
+//        }
         
     }
 
@@ -180,6 +185,7 @@ class DataCallcenterController extends Controller {
                 trim($Datos->id),
                 trim($Datos->nombres),
                 trim($Datos->apellidos),
+                trim($Datos->telefono),
                 trim($Datos->message),
                 trim($Datos->email),
                 trim($Datos->region),

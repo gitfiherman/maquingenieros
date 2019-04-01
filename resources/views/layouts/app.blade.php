@@ -8,9 +8,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>SISTEMA</title>
         <!--<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">-->
-        <!--<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">-->
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 
-        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+<!--        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link href="{{ asset('css/smartadmin-production-plugins.min.css') }}" rel="stylesheet" type="text/css" media="screen">
@@ -37,7 +37,7 @@
         <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
         <link href="{{ asset('css/jquery-confirm.css') }}" rel="stylesheet">
         <!--tablas-->
-        <link href="{{ asset('datatables/multiple-select.css') }}" rel="stylesheet">
+        <!--<link href="{{ asset('datatables/multiple-select.css') }}" rel="stylesheet">-->
         <!--<link href="{{ asset('datatables/DataTables/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">-->
 
     </head>
@@ -111,7 +111,7 @@
                         <a href="#" title="Logistica"><i class="fa fa-lg fa-fw fa-cog fa-desktop"></i> <span class="menu-item-parent">Logistica</span></a>
                         <ul id="menu_logistica">
                             <li id="menu_logistica_usuarios">
-                                <a href="usuarios" title=""><i class="fa fa-user"></i>Usuarios</a>
+                                <a href="{{route('usuarios')}}" title=""><i class="fa fa-user"></i>Usuarios</a>
                             </li>                            
                             <li id="menu_logistica_database">
                                 <a href="{{route('data_callcenter')}}" title="datos de todas las llamadas realizadas"><i class="fa fa-database"></i>Base de datos</a>
@@ -167,72 +167,73 @@
                                         <label class="label">Seleccionar Foto:</label>
                                         <label class="input"> 
                                             <input type="file" id="vw_usuario_cambiar_cargar_foto" name="vw_usuario_cambiar_cargar_foto" accept="image/png, image/jpeg, image/jpg">
-                                            </div>
-                                            </form>
-                                            </div>
-                                            </div>
-                                            </div>                 
-                                            </div>        
-                                            </div>
-                                            </div>
-                                            <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-                                            <script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>                 
+                </div>        
+            </div>
+        </div>
+        <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+        <script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>
 
-                                            <script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>
-
-
-                                            <script src="{{ asset('archivos_js/global_function.js') }}"></script>
-
-                                            <script src="{{ asset('js/app.config.js') }}"></script>
-                                            <script src="{{ asset('js/app.min.js') }}"></script>
-                                            <script src="{{ asset('js/block_ui.js') }}"></script>        
-                                            <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
-
-                                            <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
-                                            <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>
-
-                                            <script src="{{ asset('js/plugin/masked-input/jquery.maskedinput.min.js') }}"></script>
-
-                                            <script src="{{ asset('js/notification/SmartNotification.min.js')}}"></script>
-
-                                            <script src="{{ asset('js/jquery-confirm.js')}}"></script>        
-                                            <script src="{{ asset('archivos_js/configuracion.js') }}"></script>
-
-                                            <!--tablas-->        
-
-                                            <script src="{{ asset('datatables/multiple-select.js') }}"></script>
-                                            <script src="{{ asset('datatables/DataTables/js/jquery.dataTables.min.js') }}"></script>
-                                            <!--<script src="{{ asset('datatables/DataTables/js/dataTables.bootstrap.min.js') }}"></script>-->
+        <script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>
 
 
-                                            @if (!Auth::guest())
+        
 
-                                            <script>
-                            $(document).ready(function () {
-                                pageSetUp();
-                                $.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
-                                    _title: function (title) {
-                                        if (!this.options.title) {
-                                            title.html("&#160;");
-                                        } else {
-                                            title.html(this.options.title);
-                                        }
-                                    }
-                                }));
-                                $("#alertdialog").dialog({
-                                    autoOpen: false, modal: true, title: "<div class='widget-header'><h4>.: Mensaje del Sistema :.</h4></div>", buttons: [{html: '<span class="btn-label"><i class="glyphicon glyphicon-check"></i></span>&nbsp; Aceptar',
-                                            "class": "btn btn-labeled bg-color-blue txt-color-white", click: function () {
-                                                $(this).dialog("close");
-                                                if (focoglobal != "") {
-                                                    foco(focoglobal);
-                                                }
-                                                focoglobal = "";
-                                            }}]
-                                });
-                            });
-                                            </script>
-                                            @endif
+        <script src="{{ asset('js/app.config.js') }}"></script>
+        <script src="{{ asset('js/app.min.js') }}"></script>
+        <script src="{{ asset('js/block_ui.js') }}"></script>        
+        <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
-                                            @yield('page-js-script')
-                                            </body>
-                                            </html>
+        <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
+        <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>
+
+        <script src="{{ asset('js/plugin/masked-input/jquery.maskedinput.min.js') }}"></script>
+
+        <script src="{{ asset('js/notification/SmartNotification.min.js')}}"></script>
+
+        <script src="{{ asset('js/jquery-confirm.js')}}"></script>        
+        <script src="{{ asset('archivos_js/configuracion.js') }}"></script>
+        <script src="{{ asset('archivos_js/global_function.js') }}"></script>
+
+        <!--tablas-->        
+
+<!--        <script src="{{ asset('datatables/multiple-select.js') }}"></script>
+        <script src="{{ asset('datatables/DataTables/js/jquery.dataTables.min.js') }}"></script>-->
+        <!--<script src="{{ asset('datatables/DataTables/js/dataTables.bootstrap.min.js') }}"></script>-->
+
+
+        @if (!Auth::guest())
+
+        <script>
+        $(document).ready(function () {
+            pageSetUp();
+            $.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+                _title: function (title) {
+                    if (!this.options.title) {
+                        title.html("&#160;");
+                    } else {
+                        title.html(this.options.title);
+                    }
+                }
+            }));
+            $("#alertdialog").dialog({
+                autoOpen: false, modal: true, title: "<div class='widget-header'><h4>.: Mensaje del Sistema :.</h4></div>", buttons: [{html: '<span class="btn-label"><i class="glyphicon glyphicon-check"></i></span>&nbsp; Aceptar',
+                        "class": "btn btn-labeled bg-color-blue txt-color-white", click: function () {
+                            $(this).dialog("close");
+                            if (focoglobal != "") {
+                                foco(focoglobal);
+                            }
+                            focoglobal = "";
+                        }}]
+            });
+        });
+        </script>
+        @endif
+
+        @yield('page-js-script')
+    </body>
+</html>

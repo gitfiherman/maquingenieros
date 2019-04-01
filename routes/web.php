@@ -34,5 +34,12 @@ Route::group(['namespace' => 'local'], function()
    Route::get('contactos_enviados_email','DataCallcenterController@contact_email')->name('contact_email');
    Route::get('grid_contact_email','DataCallcenterController@get_contact_emails');
    
+   
+   Route::get('ver_usuarios','UsuariosController@index')->name('usuarios');
+   Route::get('grid_get_usuarios','UsuariosController@get_Usuarios');
+   
+   Route::get('insertar_nuevo_usuario','UsuariosController@insert_user');   
+   Route::post('get_user_id','UsuariosController@get_user_id');
+   Route::get('delete_usuario','UsuariosController@delete_usuario');
 });
 

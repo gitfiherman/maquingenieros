@@ -102,7 +102,7 @@
                         <div class="form-group col-md-6">
                             <label for="id_est_llamada">Estado</label>
                             <select id="id_est_llamada" class="form-control">
-                                <option value="select" selected="" disabled="">Seleccione...</option>
+                                <option value="select" selected="" readonly>Seleccione...</option>
                                 @foreach ($est_llamada as $est_llamada)
                                 <option value='{{$est_llamada->id}}'>{{$est_llamada->desc}}</option>
                                 @endforeach
@@ -111,7 +111,7 @@
                         <div class="form-group col-md-6">
                             <label for="id_asesor">Asesor</label>
                             <select id="id_asesor" class="form-control">
-                                <option value="select" selected="" disabled="">Seleccione...</option>
+                                <option value="select" selected="" readonly>Seleccione...</option>
                                 @foreach ($asesores as $asesores)
                                 <option value='{{$asesores->id}}'>{{$asesores->nom_com}}</option>
                                 @endforeach
@@ -137,6 +137,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+       
         $("#menu_logistica").show();
         $("#menu_logistica_database").addClass('cr-active');
 
@@ -144,17 +145,17 @@
             url: 'grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val(),
             datatype: 'json', mtype: 'GET',
             height: 'auto', autowidth: true,
-            colNames: ['ID', 'Nombres', 'Apellidos', 'Telefono', 'Observacion', 'Curso', 'Fecha', 'Estado', 'Edit', 'Elim'],
+            colNames: ['ID', 'Apellidos', 'Nombres', 'Telefono', 'Observacion', 'Curso', 'Fecha', 'Prox. fecha', 'Edit', 'Elim'],
             rowNum: 15, sortname: 'id', sortorder: 'desc', viewrecords: true, caption: 'Lista Entradas', align: "center",
             colModel: [
                 {name: 'id', index: 'id', hidden: true},
-                {name: 'ape_com', index: 'ape_com', width: 80},
-                {name: 'nom_com', index: 'nom_com', width: 80},
-                {name: 'movil', index: 'movil', align: 'center', width: 30},
+                {name: 'ape_com', index: 'ape_com', width: 60},
+                {name: 'nom_com', index: 'nom_com', width: 60},
+                {name: 'movil', index: 'movil', align: 'center', width: 40},
                 {name: 'obs', index: 'obs', width: 180},
-                {name: 'curso', index: 'curso', width: 60},
-                {name: 'fch_llamada', index: 'fch_llamada', align: 'center', width: 30},
-                {name: 'est_llamada', index: 'est_llamada', width: 30},
+                {name: 'curso', index: 'curso', width: 80},
+                {name: 'fch_llamada', index: 'fch_llamada', align: 'center', width: 40},
+                {name: 'prox_fch', index: 'prox_fch',align: 'center', width: 40},
                 {name: 'edit', index: 'edit', width: 15, align: 'center'},
                 {name: 'elim', index: 'elim', width: 15, align: 'center'}
             ],
@@ -177,7 +178,7 @@
         });
         $("#txt_buscar_llamada").keypress(function (e) {
             if (e.which == 13 && !e.shiftKey) {
-                fn_actualizar_grilla('tabla_call_center','grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val());
+                fn_actualizar_grilla('tabla_call_center','grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val().toUpperCase());
             }
         });
     });

@@ -88,7 +88,7 @@
                                 @else
                                     <li><a href="{{ route('login') }}"><span>Iniciar Session</span></a></li>
                                     @if (Route::has('register'))
-                                        <li><a href="{{ route('register') }}"><span>Registrarse</span></a></li>
+                                        <!--<li><a href="{{ route('register') }}"><span>Registrarse</span></a></li>-->
                                     @endif
                                 @endauth                                
                             @endif                            
@@ -134,13 +134,13 @@
         <script type="text/javascript" src="plantilla/js/bootstrap.min.js"></script>	
         <script type="text/javascript" src="plantilla/js/jquery.prettyPhoto.js"></script>
         <script type="text/javascript" src="plantilla/js/jquery.parallax.js"></script>
-        <script type="text/javascript" src="plantilla/js/smoothscroll.js"></script>
+        <!--<script type="text/javascript" src="plantilla/js/smoothscroll.js"></script>-->
         <script type="text/javascript" src="plantilla/js/jquery.nav.js"></script>
         <script type="text/javascript" src="plantilla/js/canvas.js"></script>
         <script type="text/javascript" src="plantilla/js/preloader_canvas.js"></script>
         <script type="text/javascript" src="plantilla/js/main.js"></script> 
         
-        <!--<script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>-->
+        <script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>
        
         <script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>-->
