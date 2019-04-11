@@ -8,7 +8,7 @@
                 <div class="well">
                     <h1 class="txt-color-blueDark"><b>.:Base de Datos:.</b></h1>
                     <div class="row">
-                        <article class="col-sm-12 col-md-12 col-lg-8 sortable-grid ui-sortable" style="margin-bottom: 5px;">
+                        <article class="col-sm-12 col-md-12 col-lg-6 sortable-grid ui-sortable" style="margin-bottom: 5px;">
                             <div class="input-group col-lg-12">
                                 <input class="form-control" type="text" id="txt_buscar_llamada" placeholder="Buscar...">
                                 <div class="input-group-btn">
@@ -17,6 +17,16 @@
                                     </button>
                                 </div>
                             </div>   
+                        </article>
+                        <article class="col-sm-12 col-md-12 col-lg-2 sortable-grid ui-sortable">
+                            <div class="input-group col-lg-12">
+                                <input placeholder="dd-mm-aaaa" id="prox_fecha_buscar" class="form-control datepicker" data-dateformat='dd-mm-yy' maxlength="10" style="padding-left:7px;padding-right:5px">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default btn-primary" onclick="buscar_prox_fecha();" id="btn_buscar_prox_llamada" type="button">
+                                        <i class="fa fa-calendar"></i> Prox. Fecha
+                                    </button>
+                                </div>
+                            </div> 
                         </article>
                         <article class="col-sm-12 col-md-12 col-lg-4 sortable-grid ui-sortable">
                             <div class="input-group col-lg-12">
@@ -142,7 +152,7 @@
         $("#menu_logistica_database").addClass('cr-active');
 
         jQuery("#tabla_call_center").jqGrid({
-            url: 'grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val(),
+            url: 'grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val()+'&prox_fecha_buscar='+$("#prox_fecha_buscar").val(),
             datatype: 'json', mtype: 'GET',
             height: 'auto', autowidth: true,
             colNames: ['ID', 'Apellidos', 'Nombres', 'Telefono', 'Observacion', 'Curso', 'Fecha', 'Prox. fecha', 'Edit', 'Elim'],

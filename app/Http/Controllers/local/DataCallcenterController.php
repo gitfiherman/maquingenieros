@@ -43,7 +43,7 @@ class DataCallcenterController extends Controller {
             $sidx = 1;
         }
 
-        if (empty($_GET['buscar'])) {
+        if (empty($_GET['buscar']) && empty($_GET['prox_fecha_buscar'])) {
             $count = DB::table('system.vw_data_llamadas')->count();
         } else {
             $buscar = $_GET['buscar'];
