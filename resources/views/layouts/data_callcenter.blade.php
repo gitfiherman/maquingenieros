@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: -12px">
             <section id="widget-grid" class="">
                 <div class="well">
-                    <h1 class="txt-color-blueDark"><b>.:Base de Datos:.</b></h1>
+                    <h1 class="txt-color-blueDark"><b>.:Base de Datos:..</b></h1>
                     <div class="row">
                         <article class="col-sm-12 col-md-12 col-lg-6 sortable-grid ui-sortable" style="margin-bottom: 5px;">
                             <div class="input-group col-lg-12">
