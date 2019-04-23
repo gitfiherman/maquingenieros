@@ -18,7 +18,7 @@
                                 </div>
                             </div>   
                         </article>
-                        <article class="col-sm-12 col-md-12 col-lg-2 sortable-grid ui-sortable">
+                        <article class="col-sm-12 col-md-12 col-lg-3 sortable-grid ui-sortable">
                             <div class="input-group col-lg-12">
                                 <input placeholder="dd-mm-aaaa" id="prox_fecha_buscar" class="form-control datepicker" data-dateformat='dd-mm-yy' maxlength="10" style="padding-left:7px;padding-right:5px">
                                 <div class="input-group-btn">
