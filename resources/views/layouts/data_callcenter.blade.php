@@ -28,7 +28,7 @@
                                 </div>
                             </div> 
                         </article>
-                        <article class="col-sm-12 col-md-12 col-lg-4 sortable-grid ui-sortable">
+                        <article class="col-sm-12 col-md-12 col-lg-3 sortable-grid ui-sortable">
                             <div class="input-group col-lg-12">
                                 <div class="text-right">
                                     <section class="">
