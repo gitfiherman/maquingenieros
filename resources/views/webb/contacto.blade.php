@@ -163,8 +163,8 @@
                     </div>
                     <div class="col-sm-12" style="margin-top:10px">
 
-                        <iframe class="v_contact_direccion" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.7062027143106!2d-71.5486195803154!3d-16.388814405928436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b9947aa5623%3A0x43b7e42c9556d24f!2sMaquingenieros!5e0!3m2!1ses-419!2spe!4v1550612684209" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+                        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d956.7602469823003!2d-71.50904047080348!3d-16.422744599291445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b166a41945d%3A0xf52e523e762b7d00!2s34C+818%2C+Arequipa+04009!5e0!3m2!1ses!2spe!4v1558969809907!5m2!1ses!2spe" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

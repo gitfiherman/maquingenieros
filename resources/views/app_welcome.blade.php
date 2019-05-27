@@ -54,9 +54,9 @@
                         </a>                    
                     </div>	
                     <div class="top-bar">	
-                        
+                        <span><i class="fa fa-phone"></i>AREQUIPA - PERU</span>
                         <span class="contact-mail"><a href="#" onclick="return false;"><i class="fa fa-envelope-o"></i>informes@maquingenieros.com</a></span>
-                        <span><i class="fa fa-phone"></i>957327305 - 942151138</span>
+                        <span><i class="fa fa-phone"></i>957327305 - 976429155</span>
                         @auth<span><i class="fa fa-user"></i> {{ Auth::user()->usuario }}  </span>@endauth
                         
                     </div>
@@ -168,9 +168,9 @@
         <!--        <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
         <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>-->
         <script>
-//            window.oncontextmenu = function() {
-//                return false;
-//            } 
+            window.oncontextmenu = function() {
+                return false;
+            } 
         </script>
         @yield('page-js-script-web')
     </body>
