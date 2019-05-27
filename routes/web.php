@@ -16,6 +16,27 @@ Route::post('msinfo/{type}','ContactoController@store')->name('enviarcontacto2')
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/nosotros',function(){
+    return view('webb.nosotros');
+});
+Route::get('/cursos',function(){
+    return view('webb.cursos');
+});
+
+///////////////CURSOS///////////////////
+Route::get('/curso_caja_fuller',function(){ return view('webb.cursos.caja_fuller');});
+Route::get('/curso_retroexcavadora',function(){ return view('webb.cursos.retroexcavadora');});
+Route::get('/curso_volvo_fmx',function(){ return view('webb.cursos.volvo_fmx');});
+Route::get('/curso_cargador_frontal',function(){ return view('webb.cursos.cargador_frontal');});
+Route::get('/curso_camioneta_md',function(){ return view('webb.cursos.manejo_defensivo');});
+Route::get('/curso_hexcavadora_hidraulica',function(){ return view('webb.cursos.hexcavadora_hidraulica');});
+Route::get('/curso_i_shift',function(){ return view('webb.cursos.volvo_i_shift');});
+Route::get('/curso_minicargador',function(){ return view('webb.cursos.minicargador');});
+Route::get('/curso_montacargas',function(){ return view('webb.cursos.montacargas');});
+Route::get('/curso_motoniveladora',function(){ return view('webb.cursos.motoniveladora');});
+Route::get('/curso_rodillo',function(){ return view('webb.cursos.rodillo');});
+Route::get('/curso_tractor_oruga',function(){ return view('webb.cursos.tractor_oruga');});
+/////////////////////////////////////
 
 //////////////////////////data  CALL CENTER ////////////////////*////////
 Route::get('example',function(){return view('layouts.example');});

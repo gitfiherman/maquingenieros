@@ -63,11 +63,10 @@
                     <nav class="collapse navbar-collapse navbar-right">					
                         <ul class="nav navbar-nav">
                             <li id="menu_principal_inicio"><a href="/"><span>Inicio</span></a></li> 
-                            <li id="menu_principal_nosotros"><a href="#" onclick="return false;"><span>Nosotros</span></a></li>                        
-                            <li id="menu_principal_cursos"><a href="#" onclick="return false;"><span>Cursos</span></a></li>
-<!--                            <li><a href="#"><span>Alquiler</span></a></li>-->
-                            <li id="menu_principal_eventos"><a href="#" onclick="return false;"><span>Eventos</span></a></li> 
-                            <li id="menu_principal_galeria"><a href="#" onclick="return false;"><span>Galeria</span></a></li>						
+                            <li id="menu_principal_nosotros"><a href="nosotros"><span>Nosotros</span></a></li>                        
+                            <li id="menu_principal_cursos"><a href="cursos"><span>Cursos</span></a></li>
+<!--                            <li id="menu_principal_eventos"><a href="#" onclick="return false;"><span>Eventos</span></a></li> 
+                            <li id="menu_principal_galeria"><a href="#" onclick="return false;"><span>Galeria</span></a></li>						-->
                             <li id="menu_principal_contacto"><a href="{{route('contacto')}}"><span>Contacto</span></a></li>
                             @if (Route::has('login'))                                
                                 @auth
@@ -142,28 +141,32 @@
         
         <script src="{{ asset('js/libs/jquery-2.1.1.min.js') }}"></script>
        
-        <script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>-->
+      
 
         <script src="{{ asset('archivos_js/global_function.js') }}"></script>
 
         <script src="{{ asset('js/app.config.js') }}"></script>
         <script src="{{ asset('js/app.min.js') }}"></script>
         <script src="{{ asset('js/block_ui.js') }}"></script>        
-        <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+        
 
-        <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
-        <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>
+
 
         <script src="{{ asset('js/plugin/masked-input/jquery.maskedinput.min.js') }}"></script>
 
         <script src="{{ asset('js/notification/SmartNotification.min.js')}}"></script>
         
         <script src="{{ asset('js/jquery-confirm.js')}}"></script>
-        <script src="{{ asset('js/pdf/jspdf.debug.js') }}"></script>
-        <script src="{{ asset('js/pdf/html2pdf.js') }}"></script>
-        <script src="{{ asset('archivos_js/configuracion.js') }}"></script>        
-
+        <script src="{{ asset('archivos_js/configuracion.js') }}"></script>  
+        
+       <!--<script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>--> 
+<!--        <script src="{{ asset('js/pdf/jspdf.debug.js') }}"></script>
+        <script src="{{ asset('js/pdf/html2pdf.js') }}"></script>-->
+              
+  <!--<script src="{{ asset('js/libs/jquery-ui-1.10.3.min.js') }}"></script>-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>-->
+        <!--        <script src="{{ asset('js/plugin/jqgrid/jquery.jqGrid.min.js') }}"></script>
+        <script src="{{ asset('js/plugin/jqgrid/grid.locale-en.min.js') }}"></script>-->
         <script>
 //            window.oncontextmenu = function() {
 //                return false;

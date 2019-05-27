@@ -147,12 +147,12 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-       
+
         $("#menu_logistica").show();
         $("#menu_logistica_database").addClass('cr-active');
 
         jQuery("#tabla_call_center").jqGrid({
-            url: 'grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val()+'&prox_fecha_buscar='+$("#prox_fecha_buscar").val(),
+            url: 'grid_data_llamadas?buscar=' + $("#txt_buscar_llamada").val() + '&prox_fecha_buscar=' + $("#prox_fecha_buscar").val(),
             datatype: 'json', mtype: 'GET',
             height: 'auto', autowidth: true,
             colNames: ['ID', 'Apellidos', 'Nombres', 'Telefono', 'Observacion', 'Curso', 'Fecha', 'Prox. fecha', 'Edit', 'Elim'],
@@ -165,7 +165,7 @@
                 {name: 'obs', index: 'obs', width: 180},
                 {name: 'curso', index: 'curso', width: 80},
                 {name: 'fch_llamada', index: 'fch_llamada', align: 'center', width: 40},
-                {name: 'prox_fch', index: 'prox_fch',align: 'center', width: 40},
+                {name: 'prox_fch', index: 'prox_fch', align: 'center', width: 40},
                 {name: 'edit', index: 'edit', width: 15, align: 'center'},
                 {name: 'elim', index: 'elim', width: 15, align: 'center'}
             ],
@@ -188,7 +188,7 @@
         });
         $("#txt_buscar_llamada").keypress(function (e) {
             if (e.which == 13 && !e.shiftKey) {
-                fn_actualizar_grilla('tabla_call_center','grid_data_llamadas?buscar='+$("#txt_buscar_llamada").val().toUpperCase());
+                fn_actualizar_grilla('tabla_call_center', 'grid_data_llamadas?buscar=' + $("#txt_buscar_llamada").val().toUpperCase());
             }
         });
     });
